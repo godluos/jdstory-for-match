@@ -8,11 +8,6 @@
   </div>
   <div class="col-md-6">
     <h2> <%= @product.title %> </h2>
-    <div style="height:100px;">
-      <p>
-        <%= @product.description %>
-      </p>
-    </div>
     <div> 数量 : <%= @product.quantity %> </div>
     <div class="product-price"> ￥ <%= @product.price %> </div>
     <div class="pull-right">
@@ -24,4 +19,7 @@
       <% end %>
     </div>
   </div>
+</div>
+<div class="col-md-12">
+   <p><%= raw @product.description %></p>
 </div>

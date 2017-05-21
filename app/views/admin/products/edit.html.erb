@@ -4,7 +4,8 @@
     <%= f.input :title %>
   </div>
   <div class="group">
-    <%= f.input :description %>
+    <%= f.input :description, :as => :kindeditor,
+    :label => "内容", :input_html => { :width => 800, :height => 300 } %>
   </div>
   <div class="group">
     <%= f.input :quantity %>
