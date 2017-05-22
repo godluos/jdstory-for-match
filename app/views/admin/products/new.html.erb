@@ -4,17 +4,20 @@
     <%= f.input :title %>
   </div>
   <div class="group">
-    <%= f.input :description, :as => :kindeditor,
-    :label => "内容", :input_html => { :width => 800, :height => 300 } %>
-  </div>
-  <div class="group">
     <%= f.input :quantity %>
   </div>
   <div class="group">
     <%= f.input :price %>
   </div>
   <div class="group">
+    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %>
+  </div>
+  <div class="group">
     <%= f.input :image, as: :file %>
+  </div>
+  <div class="group">
+    <%= f.input :description, :as => :kindeditor,
+    :label => "内容", :input_html => { :width => 800, :height => 300 } %>
   </div>
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 <% end %>
