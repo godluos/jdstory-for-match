@@ -7,10 +7,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+    <%= render "common/navbar" %>
     <div class="container-fluid">
-
       <%= yield %>
     </div>
-    
+    <%= render "common/footer" %>
   </body>
 </html>
