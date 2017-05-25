@@ -17,14 +17,21 @@
 //= require turbolinks
 //= require_tree .
 
-
-var wow = new WOW({
-mobile: false // trigger animations on mobile devices (default is true)
+// ------------------------------------------------------------------------------ //
+// nav menu
+// ------------------------------------------------------------------------------ //
+$(document).on("scroll", function () {
+    if ($(document).scrollTop() > 0) {
+        $("nav").addClass("scroll_menu");
+    } else {
+        $("nav").removeClass("scroll_menu");
+    }
 });
 
-wow.init();
-
-ction ($) {
+// ------------------------------------------------------------------------------ //
+// bootsnav
+// ------------------------------------------------------------------------------ //
+(function ($) {
 	"use strict";
 
     var bootsnav = {
