@@ -9,10 +9,10 @@
   </div>
 </div>
 </div>
-<div class="bg-2 page-header " >
+<div class="page-header bg-2" >
   <div class="container-fluid">
     <div class="col-xs-12 col-sm-6 col-md-7 ">
-      <div class=" text">
+      <div class=" text-center ">
         <h2>艺术品</h2>
         <p>来选个艺术品吧</p>
       </div>
@@ -62,7 +62,7 @@
     </div>
   </div>
 
-  <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <div class="row bg-3 col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <% @products.each do |product| %>
       <div class="col-xs-6 col-md-3">
         <%= link_to product_path(product) do %>
@@ -71,40 +71,32 @@
           <% else %>
             <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
           <% end %>
-        <% end %>      
+        <% end %>
       </div>
     <% end %>
   </div>
 
-
-
-
-      <div class="text-center sections3 bg-white p-bottom-90  wow animated slideInUp">
+      <div class="text-center bg-4 wow animated slideInUp">
         <div class="container">
           <div class="row">
             <div class="col-md-12">
               <div class="head-title">
-                <h2><span>Brand,</span> We work with</h2>
+                <h3><span>Brand,</span> We work with</h3>
               </div>
             </div>
-            <div class="main-brandv1 p-top-50">
-              <div class="col-md-3 col-sm-6">
-                <div class="brand-itemv1">
-                  <a href=""><img src="assets/brand-03.png" alt="" /></a>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6 xs-m-top-40">
-                <div class="brand-itemv1">
+            <div class="main-brandv1">
+              <div class="col-md-4 col-xs-12 ">
+                <div class="thumbnail itemv1">
                   <a href=""><img src="assets/brand-02.png" alt="" /></a>
                 </div>
               </div>
-              <div class="col-md-3 col-sm-6 sm-m-top-30 xs-m-top-40">
-                <div class="brand-itemv1">
+              <div class="col-md-4 col-xs-12 ">
+                <div class="thumbnail itemv1">
                   <a href=""><img src="assets/brand-03.png" alt="" /></a>
                 </div>
               </div>
-              <div class="col-md-3 col-sm-6 sm-m-top-30 xs-m-top-40">
-                <div class="brand-itemv1">
+              <div class="col-md-4 col-xs-12 ">
+                <div class="thumbnail itemv1">
                   <a href=""><img src="assets/brand-04.png" alt="" /></a>
                 </div>
               </div>
@@ -119,11 +111,10 @@
 
 
       <!-- Footer Widget section -->
-      <div class="bg-primary">
-
+      <div class="bg-5">
         <div class="container">
           <div class="row">
-            <div class="main-weidget p-top-80 p-bottom-80">
+            <div class="main-weidget">
               <div class="col-md-3">
                 <div class="weidget-item">
                   <h4 class="text-white">Company</h4>
@@ -137,7 +128,7 @@
               </div>
               <!-- End off col-sm-3 -->
 
-              <div class="col-md-3 sm-m-top-40">
+              <div class="col-md-3 ">
                 <div class="weidget-item">
                   <h4 class="text-white">Quick Links</h4>
                   <ul class="m-top-20">
@@ -150,7 +141,7 @@
               </div>
               <!-- End off col-sm-3 -->
 
-              <div class="col-md-2 sm-m-top-40">
+              <div class="col-md-2 ">
                 <div class="weidget-item">
                   <h4 class="text-white">Conditions</h4>
                   <ul class="m-top-20">
@@ -163,26 +154,19 @@
               </div>
               <!-- End off col-sm-3 -->
 
-              <div class="col-md-4 sm-m-top-40">
+              <div class="col-md-4 ">
                 <div class="weidget-item">
                   <h4 class="text-white">Get connected</h4>
-                  <ul class="list-inline socail m-top-20">
-                    <li><a href=""><span class="social_facebook"></span></a></li>
-                    <li><a href=""><span class="social_twitter"></span></a></li>
-                    <li><a href=""><span class="social_googleplus"></span></a></li>
+                  <ul class="list-inline socail ">
+                      <li><a href="#"><i class="fa fa-twitter fa-2x" ></i></a></li>
+                      <li><a href="#"><i class="fa fa-facebook fa-2x" ></i></a></li>
+                      <li><a href="#"><i class="fa fa-linkedin fa-2x" ></i></a></li>
+                      <li><a href="#"><i class="fa fa-flickr fa-2x" ></i></a></li>
                   </ul>
                 </div>
               </div>
               <!-- End off col-md-4 -->
-
             </div>
           </div>
-          <!-- End off main widget-->
-
         </div>
-        <!-- End off container -->
       </div>
-      <!-- End off footer widget Section -->
-
-
-      <!--Footer section-->
