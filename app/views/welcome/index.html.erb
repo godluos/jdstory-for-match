@@ -9,15 +9,15 @@
   </div>
 </div>
 </div>
-<div class="bg-2 page-header" >
+<div class="bg-2 page-header " >
   <div class="container-fluid">
-    <div class="col-md-7">
+    <div class="col-xs-12 col-sm-6 col-md-7 ">
       <div class=" text">
         <h2>艺术品</h2>
         <p>来选个艺术品吧</p>
       </div>
     </div>
-    <div class="col-md-5">
+    <div class="col-xs-12 col-sm-6 col-md-5 ">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -61,59 +61,24 @@
       </div>
     </div>
   </div>
-</div>
-<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 grid">
-        <a class="thumbnail">
-          <img src="https://ooo.0o0.ooo/2017/05/22/5922be53b74b2.png" alt="" class="img-responsive"/>
-          <figcaption>
-            <h2>成功项目<span> 吧啦吧啦</span></h2>
-            <p>牛逼牛逼，吧啦吧啦.</p>
-            <a href="/">View more</a>
-          </figcaption>
-        </a>
-        <a class="thumbnail">
-          <img src="https://ooo.0o0.ooo/2017/05/22/5922be54ee7e2.png" alt="" class="img-responsive"/>
-          <figcaption>
-            <h2>成功项目<span> 吧啦吧啦</span></h2>
-            <p>牛逼牛逼，吧啦吧啦.</p>
-            <a href="/">View more</a>
-          </figcaption>
-        </a>
-        <a class="thumbnail">
-          <img src="https://ooo.0o0.ooo/2017/05/22/5922be53b74b2.png" alt="" class="img-responsive"/>
-          <figcaption>
-            <h2>成功项目<span> 吧啦吧啦</span></h2>
-            <p>牛逼牛逼，吧啦吧啦.</p>
-            <a href="/">View more</a>
-          </figcaption>
-        </a>
+
+  <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <% @products.each do |product| %>
+      <div class="col-xs-6 col-md-3">
+        <%= link_to product_path(product) do %>
+          <% if product.image.present? %>
+            <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+          <% end %>
+        <% end %>      
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 grid">
-          <a class="thumbnail">
-            <img src="https://ooo.0o0.ooo/2017/05/22/5922be53b74b2.png" alt="" class="img-responsive"/>
-            <figcaption>
-              <h2>成功项目<span> 吧啦吧啦</span></h2>
-              <p>牛逼牛逼，吧啦吧啦.</p>
-              <a href="/">View more</a>
-            </figcaption>
-          </a>
-          <a class="thumbnail">
-            <img src="https://ooo.0o0.ooo/2017/05/22/5922be542047f.png" alt="" class="img-responsive"/>
-            <figcaption>
-              <h2>成功项目<span> 吧啦吧啦</span></h2>
-              <p>牛逼牛逼，吧啦吧啦.</p>
-              <a href="/">View more</a>
-            </figcaption>
-          </a>
-          <a class="thumbnail">
-            <img src="https://ooo.0o0.ooo/2017/05/22/5922be54ee7e2.png" alt="" class="img-responsive"/>
-            <figcaption>
-              <h2>成功项目<span> 吧啦吧啦</span></h2>
-              <p>牛逼牛逼，吧啦吧啦.</p>
-              <a href="/">View more</a>
-            </figcaption>
-          </a>
-      </div>
+    <% end %>
+  </div>
+
+
+
+
       <div class="text-center sections3 bg-white p-bottom-90  wow animated slideInUp">
         <div class="container">
           <div class="row">
@@ -221,25 +186,3 @@
 
 
       <!--Footer section-->
-      <footer class="footer bg-info p-top-20 p-bottom-20">
-        <div class="scrollup">
-          <a href="#" class="hvr-hang"><span class="arrow_up"></span></a>
-        </div>
-
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="hv2-main-footer wow fadeInUp">
-                <div class="row">
-
-                  <div class="col-md-12">
-                    <div class="copyright-text text-center">
-                      <p class="text-white">Made with <i class="fa fa-heart"></i> by <a class="text-white" href="https://bootstrapthemes.co" target="_blank">Bootstrap Themes</a> 2016. All Rights Reserved</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
