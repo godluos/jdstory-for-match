@@ -45,6 +45,7 @@ gem 'aasm'
 gem 'rails_kindeditor'
 gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
+gem 'figaro'
 
 
 group :development, :test do
