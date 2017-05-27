@@ -4,7 +4,7 @@
       <div class="intro-content">
         <h1>艺术品</h1>
         <p>来选个艺术品吧</p>
-    </div>
+      </div>
       <a class="btn btn-primary btn-lg" href="jobs" role="button">立即开始</a></a>
   </div>
 </div>
@@ -61,112 +61,105 @@
       </div>
     </div>
   </div>
-
-  <div class="row bg-3 col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <% @products.each do |product| %>
-      <div class="col-xs-6 col-md-3">
-        <%= link_to product_path(product) do %>
-          <% if product.image.present? %>
-            <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-          <% else %>
-            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-          <% end %>
+</div>
+<div class="row bg-3 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <% @products.each do |product| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to product_path(product) do %>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
         <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+<div class="text-center bg-4 wow animated slideInUp">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="head-title">
+          <h3><span>Brand,</span> We work with</h3>
+        </div>
       </div>
-    <% end %>
+      <div class="main-brandv1">
+        <div class="col-md-4 col-xs-12 ">
+          <div class="thumbnail itemv1">
+            <a href=""><img src="assets/brand-02.png" alt="" /></a>
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-12 ">
+          <div class="thumbnail itemv1">
+            <a href=""><img src="assets/brand-03.png" alt="" /></a>
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-12 ">
+          <div class="thumbnail itemv1">
+            <a href=""><img src="assets/brand-04.png" alt="" /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End off row -->
   </div>
-
-      <div class="text-center bg-4 wow animated slideInUp">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="head-title">
-                <h3><span>Brand,</span> We work with</h3>
-              </div>
-            </div>
-            <div class="main-brandv1">
-              <div class="col-md-4 col-xs-12 ">
-                <div class="thumbnail itemv1">
-                  <a href=""><img src="assets/brand-02.png" alt="" /></a>
-                </div>
-              </div>
-              <div class="col-md-4 col-xs-12 ">
-                <div class="thumbnail itemv1">
-                  <a href=""><img src="assets/brand-03.png" alt="" /></a>
-                </div>
-              </div>
-              <div class="col-md-4 col-xs-12 ">
-                <div class="thumbnail itemv1">
-                  <a href=""><img src="assets/brand-04.png" alt="" /></a>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <!-- End off row -->
-        </div>
-        <!-- End off container -->
-      </div>
-      <!-- End off brand section-->
-
-
-      <!-- Footer Widget section -->
-      <div class="bg-5">
-        <div class="container">
-          <div class="row">
-            <div class="main-weidget">
-              <div class="col-md-3">
-                <div class="weidget-item">
-                  <h4 class="text-white">Company</h4>
-                  <ul class="m-top-20">
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="contact.html">Contact us</a></li>
-                  </ul>
-                </div>
-              </div>
-              <!-- End off col-sm-3 -->
-
-              <div class="col-md-3 ">
-                <div class="weidget-item">
-                  <h4 class="text-white">Quick Links</h4>
-                  <ul class="m-top-20">
-                    <li><a href=""> Designers</a></li>
-                    <li><a href=""> Pricing plan</a></li>
-                    <li><a href=""> Services</a></li>
-                    <li><a href=""> Download</a></li>
-                  </ul>
-                </div>
-              </div>
-              <!-- End off col-sm-3 -->
-
-              <div class="col-md-2 ">
-                <div class="weidget-item">
-                  <h4 class="text-white">Conditions</h4>
-                  <ul class="m-top-20">
-                    <li><a href=""> Online support</a></li>
-                    <li><a href=""> Privacy</a></li>
-                    <li><a href=""> Terms</a></li>
-                    <li><a href=""> Policy</a></li>
-                  </ul>
-                </div>
-              </div>
-              <!-- End off col-sm-3 -->
-
-              <div class="col-md-4 ">
-                <div class="weidget-item">
-                  <h4 class="text-white">Get connected</h4>
-                  <ul class="list-inline socail ">
-                      <li><a href="#"><i class="fa fa-twitter fa-2x" ></i></a></li>
-                      <li><a href="#"><i class="fa fa-facebook fa-2x" ></i></a></li>
-                      <li><a href="#"><i class="fa fa-linkedin fa-2x" ></i></a></li>
-                      <li><a href="#"><i class="fa fa-flickr fa-2x" ></i></a></li>
-                  </ul>
-                </div>
-              </div>
-              <!-- End off col-md-4 -->
-            </div>
+  <!-- End off container -->
+</div>
+<!-- End off brand section-->
+<!-- Footer Widget section -->
+<div class="bg-5">
+  <div class="container">
+    <div class="row">
+      <div class="main-weidget">
+        <div class="col-md-3">
+          <div class="weidget-item">
+            <h4 class="text-white">Company</h4>
+            <ul class="m-top-20">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="contact.html">Contact us</a></li>
+            </ul>
           </div>
         </div>
+        <!-- End off col-sm-3 -->
+        <div class="col-md-3 ">
+          <div class="weidget-item">
+            <h4 class="text-white">Quick Links</h4>
+            <ul class="m-top-20">
+              <li><a href=""> Designers</a></li>
+              <li><a href=""> Pricing plan</a></li>
+              <li><a href=""> Services</a></li>
+              <li><a href=""> Download</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- End off col-sm-3 -->
+        <div class="col-md-2 ">
+          <div class="weidget-item">
+            <h4 class="text-white">Conditions</h4>
+            <ul class="m-top-20">
+              <li><a href=""> Online support</a></li>
+              <li><a href=""> Privacy</a></li>
+              <li><a href=""> Terms</a></li>
+              <li><a href=""> Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- End off col-sm-3 -->
+        <div class="col-md-4 ">
+          <div class="weidget-item">
+            <h4 class="text-white">Get connected</h4>
+            <ul class="list-inline socail ">
+              <li><a href="#"><i class="fa fa-twitter fa-2x" ></i></a></li>
+              <li><a href="#"><i class="fa fa-facebook fa-2x" ></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin fa-2x" ></i></a></li>
+              <li><a href="#"><i class="fa fa-flickr fa-2x" ></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- End off col-md-4 -->
       </div>
+    </div>
+  </div>
+</div>

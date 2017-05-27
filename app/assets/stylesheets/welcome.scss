@@ -2,36 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#bg-1{
-  background: image_url("top1.jpg") no-repeat;
-  background-size:100% 100%;
-  padding-top: 20%;
-  padding-bottom: 20%;
+#landpage{
+  background-color:#FFFFFB;
 }
+
 
 .bg-2 h2{font-size: 3.2em;}
 .bg-2 p{font-size: 1.5em;}
 .bg-2 {
   padding-top: 5%;
   padding-bottom: 5%;
+  background-color:#FFFFFB;
 }
 
 .bg-3 {
   padding-top: 5%;
   padding-bottom: 5%;
+  background-color:#FFFFFB;
 }
 
 .bg-4 h3{font-size: 2.0em;}
 .bg-4{
   padding-top: 5%;
   padding-bottom: 5%;
+  background-color:#FFFFFB;
 }
 .head-title{
   padding-bottom: 5%;
 }
 
 .bg-5{
-  background-color: #f9f860;
+  background-color: #f6f6f6;
   padding-top: 5%;
   padding-bottom: 5%;
   line-height:200%;

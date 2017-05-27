@@ -1,14 +1,37 @@
-<div class="row">
-  <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
-      <% end %>
-      <%= product.title %> ￥ <%= product.price %>
-    </div>
-  <% end %>
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <div class="intro-content">
+        <h1>艺术品</h1>
+        <p>来选个艺术品吧</p>
+      </div>
+      <a class="btn btn-primary btn-lg" href="jobs" role="button">立即开始</a></a>
+  </div>
 </div>
+</div>
+<div class="container-fluid">
+<div class="col-xs-3 col-md-2">
+</div>
+  <div class="row col-xs-9 col-md-10">
+    <% @products.each do |product| %>
+    <%= link_to product_path(product) do %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4  ">
+
+          <% if product.image.present? %>
+            <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+          <% end %>
+
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-8">
+        <%= product.title %> ￥ <%= product.price %>
+      </div>
+    </div>
+
+<% end %>
+<% end %>
+      </div>
+
+  </div>
