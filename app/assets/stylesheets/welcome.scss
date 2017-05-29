@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #landpage{
-  background-color:#FFFFFB;
+
 }
 
 
@@ -12,28 +12,61 @@
 .bg-2 {
   padding-top: 5%;
   padding-bottom: 5%;
-  background-color:#FFFFFB;
+
 }
 
 .bg-3 {
   padding-top: 5%;
   padding-bottom: 5%;
-  background-color:#FFFFFB;
+
 }
 
 .bg-4 h3{font-size: 2.0em;}
 .bg-4{
   padding-top: 5%;
   padding-bottom: 5%;
-  background-color:#FFFFFB;
+
 }
 .head-title{
   padding-bottom: 5%;
 }
 
 .bg-5{
-  background-color: #f6f6f6;
-  padding-top: 5%;
+
+  padding-top: 10%;
   padding-bottom: 5%;
   line-height:200%;
+}
+
+
+
+
+.wasteland {
+  animation:zoomIn 10s linear infinite alternate;
+  background-image:url(http://ongoo1pyy.bkt.clouddn.com/keting.png);
+  background-size:cover;
+  height:100%;
+  position:fixed;
+  width:100%;
+
+}
+
+.glass {
+  animation:zoomIn 10s linear infinite alternate-reverse;
+  background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/71829/5791996587_7b192ffbf7_o.jpg);
+  background-size:cover;
+  height:100%;
+  opacity:.3;
+  position:fixed;
+  width:100%;
+
+}
+
+@keyframes zoomIn {
+  0% {
+    transform:scale(1);
+  }
+  100% {
+    transform:scale(1.5);
+  }
 }

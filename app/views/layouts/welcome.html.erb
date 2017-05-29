@@ -8,7 +8,12 @@
   </head>
   <body id="landpage" data-spy="scroll" data-target=".navbar-collapse">
     <%= render "common/navbar" %>
-    <%= yield %>
+    <div class="container-fluid">
+      <div class="wasteland thumbnail"></div>
+      <div class="glass thumbnail"></div>
+      <%= yield %>
+    </div>
+
     <%= render "common/footer" %>
 
   </body>

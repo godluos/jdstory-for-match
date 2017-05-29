@@ -60,14 +60,30 @@
 
         <div class="col-sm-6 col-xs-12">
           <div class="call-us-text text-right">
-            <form class="form-inline">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search this sit">
-                <a href="#"><span class="icon_search"></span></a>
-              </div>
-            </form>
-
-            <a href="#" class="signin">Sign in</a>
+        <% if !current_user %>
+        <a><%= link_to("注册", new_user_registration_path, class: 'signin') %> </a>
+        <a><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'),
+        new_user_session_path, class: 'signin') %></a>
+        <% else %>
+          <a class="dropdown">
+            <a href="#" class="dropdown-toggle signin" data-toggle="dropdown">
+              Hi!, <%= current_user.email %>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <% if current_user.admin? %>
+                <li>
+                  <%= link_to("Admin 选单", admin_products_path ) %>
+                </li>
+                <li>
+                  <%= link_to("个人订单列表", account_orders_path ) %>
+                </li>
+              <% end %>
+              <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'),
+              destroy_user_session_path, method: :delete) %> </li>
+            </ul>
+          </a>
+          <% end%>
           </div>
         </div>
 
