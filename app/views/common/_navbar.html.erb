@@ -112,9 +112,16 @@
                 <li>
                   <%= link_to("返回首页",root_path)%>
                 </li>
-                <li><a href="/products">艺术版画</a></li>
-                <li><a href="pricing.html">工艺墙饰</a></li>
-                <li><a href="blog.html">创意摆件</a></li>
+                <li>
+                  <%= link_to("艺术版画",products_path(category:"艺术版画"))%>
+
+                </li>
+                <li>
+                  <%= link_to("工艺墙饰",products_path(category:"工艺墙饰"))%>
+                </li>
+                <li>
+                  <%= link_to("创意摆件",products_path(category:"创意摆件"))%>                
+                </li>
 
                 <li>
                   <%= link_to carts_path do  %>
