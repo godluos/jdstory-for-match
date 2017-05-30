@@ -1590,8 +1590,25 @@ footer.bg-end{
 footer.bg-end p{font-size: 1.1em}
 
 // ------Body----------
-.jumbotron{
-  padding-top: 20%;
-  padding-bottom: 20%;
+.thumbnail{
+  border: none;
+}
 
+#bg-0 {
+  background-image: url('http://ongoo1pyy.bkt.clouddn.com/jd-store-bg-0-bc.png');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-color: #fff;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+//---------common-------
+.col-centered{
+  float: none;
+  margin: 0 auto;
+}
+
+.take{
+  padding-bottom: 10%;
 }

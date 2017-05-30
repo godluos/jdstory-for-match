@@ -109,10 +109,19 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
               <ul class="nav navbar-nav navbar-right" data-in="fadeIn" data-out="fadeOut">
+                <li>
+                  <%= link_to("返回首页",root_path)%>
+                </li>
                 <li><a href="/products">艺术版画</a></li>
                 <li><a href="pricing.html">工艺墙饰</a></li>
                 <li><a href="blog.html">创意摆件</a></li>
-                <li><a href="contact.html">关于我们</a></li>
+
+                <li>
+                  <%= link_to carts_path do  %>
+                    购物车 <i class="fa fa-shopping-cart"> </i>
+                    ( <%= current_cart.products.count %> )
+                  <% end %>
+                </li>
               </ul>
             </div>
             <!-- /.navbar-collapse -->
