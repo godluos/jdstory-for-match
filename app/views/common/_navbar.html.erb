@@ -52,8 +52,7 @@
         <div class="col-sm-6 col-xs-6">
           <div class="call-us-number">
             <ul class="list-inline">
-              <li><span class="icon_mail_alt"></span> admin@test.com</li>
-              <li><span class="icon_phone"></span> 123456</li>
+              <li><span class="icon_mail_alt"></span>艺汇—装饰的品味</li>
             </ul>
           </div>
         </div>
@@ -66,8 +65,8 @@
         new_user_session_path, class: 'signin') %></a>
         <% else %>
           <a class="dropdown">
-            <a href="#" class="dropdown-toggle signin" data-toggle="dropdown">
-              Hi!, <%= current_user.email %>
+            <a href="#" class="dropdown-toggle signin text-right"
+            data-toggle="dropdown">你好!, <%= current_user.email %>
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu text-right">
@@ -120,7 +119,7 @@
                   <%= link_to("工艺墙饰",products_path(category:"工艺墙饰"))%>
                 </li>
                 <li>
-                  <%= link_to("创意摆件",products_path(category:"创意摆件"))%>                
+                  <%= link_to("创意摆件",products_path(category:"创意摆件"))%>
                 </li>
 
                 <li>

@@ -11,14 +11,12 @@
   <% @products.each do |product| %>
   <div class="col-xs-12 col-sm-6 col-md-4">
     <%= link_to product_path(product) do %>
-      <div class="col-xs-12 col-sm-8 col-md-8">
+      <div>
           <% if product.image.present? %>
             <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
           <% else %>
             <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-          <% end %>
-          </div>
-        <div class="col-xs-12 col-sm-4 col-md-4">
+          <% end %>      
           <h3><%= product.title %></h3>
           <p>价格<%= product.price %></p>
         </div>
