@@ -41,5 +41,10 @@ Rails.application.routes.draw do
   end
 
   resources :cart_items
+
+  namespace :about do
+    resources :user
+  end
+  
   root 'welcome#index'
 end

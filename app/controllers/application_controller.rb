@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
+  before_action :sign_up_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :exception
   helper_method :current_cart
-  
+
+
   def admin_required
     if !current_user.admin?
       redirect_to root_path, flash[:alert] = "你不是管理员"
@@ -11,6 +13,14 @@ class ApplicationController < ActionController::Base
   def current_cart
     @current_cart ||= find_cart
   end
+
+  protected
+
+  def sign_up_permitted_parameters
+    devise_parameter_sanitizer.permit :sign_up, keys: [:username]
+    devise_parameter_sanitizer.permit :account_update, keys: [:username]
+ end
+
 
   private
 
