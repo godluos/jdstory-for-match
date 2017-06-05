@@ -49,25 +49,43 @@
   <div class="call-us-area bg-info text-white">
     <div class="container">
       <div class="row">
-        <div class="col-sm-6 col-xs-12">
+        <div class="col-sm-6 col-xs-6">
           <div class="call-us-number">
             <ul class="list-inline">
-              <li><span class="icon_phone"></span> 123 456 7890</li>
-              <li><span class="icon_mail_alt"></span> sampel@name.com</li>
+              <li><span class="icon_mail_alt"></span>艺汇—装饰的品味</li>
             </ul>
           </div>
         </div>
-        <div class="col-sm-6 col-xs-12">
+
+        <div class="col-sm-6 col-xs-6">
           <div class="call-us-text text-right">
-            <form class="form-inline">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search this sit">
-                <a href="#"><span class="icon_search"></span></a>
-              </div>
-            </form>
-            <a href="#" class="signin">Sign in</a>
+        <% if !current_user %>
+        <a><%= link_to("注册", new_user_registration_path, class: 'signin') %> </a>
+        <a><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'),
+        new_user_session_path, class: 'signin') %></a>
+        <% else %>
+          <a class="dropdown">
+            <a href="#" class="dropdown-toggle signin text-right"
+            data-toggle="dropdown">你好!, <%= current_user.email %>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu text-right">
+              <% if current_user.admin? %>
+                <li>
+                  <%= link_to("Admin 选单", admin_products_path ) %>
+                </li>
+                <li>
+                  <%= link_to("个人订单列表", account_orders_path ) %>
+                </li>
+              <% end %>
+              <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'),
+              destroy_user_session_path, method: :delete) %> </li>
+            </ul>
+          </a>
+          <% end%>
           </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -82,19 +100,34 @@
                 <i class="fa fa-bars"></i>
               </button>
               <a class="navbar-brand" href="#">
-                <img src="assets/logov1.png" class="logo logo-display" alt="">
-                <img src="assets/logoscroll.png" class="logo logo-scrolled" alt="">
+                <!-- <img src="assets/logov1.png" class="logo logo-display" alt="">
+                <img src="assets/logoscroll.png" class="logo logo-scrolled" alt=""> -->
               </a>
             </div>
             <!-- End Header Navigation -->
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
-              <ul class="nav navbar-nav navbar-right m-top-20" data-in="fadeIn" data-out="fadeOut">
-                <li class="active"><a href="home.html">Home</a> </li>
-                <li><a href="/products">Products</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+              <ul class="nav navbar-nav navbar-right" data-in="fadeIn" data-out="fadeOut">
+                <li>
+                  <%= link_to("返回首页",root_path)%>
+                </li>
+                <li>
+                  <%= link_to("艺术版画",products_path(category:"艺术版画"))%>
+
+                </li>
+                <li>
+                  <%= link_to("工艺墙饰",products_path(category:"工艺墙饰"))%>
+                </li>
+                <li>
+                  <%= link_to("创意摆件",products_path(category:"创意摆件"))%>
+                </li>
+
+                <li>
+                  <%= link_to carts_path do  %>
+                    购物车 <i class="fa fa-shopping-cart"> </i>
+                    ( <%= current_cart.products.count %> )
+                  <% end %>
+                </li>
               </ul>
             </div>
             <!-- /.navbar-collapse -->

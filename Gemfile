@@ -43,6 +43,9 @@ gem 'mini_magick'
 gem 'letter_opener', group: :development
 gem 'aasm'
 gem 'rails_kindeditor'
+gem 'carrierwave-qiniu'
+gem 'qiniu-rs'
+gem 'figaro'
 
 
 group :development, :test do

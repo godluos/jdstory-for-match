@@ -6,9 +6,14 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body data-spy="scroll" data-target=".navbar-collapse">
+  <body id="landpage" data-spy="scroll" data-target=".navbar-collapse">
     <%= render "common/navbar" %>
-    <%= yield %>
+    <div class="container-fluid">
+      <div class="wasteland thumbnail"></div>
+      <div class="glass thumbnail"></div>
+      <%= yield %>
+    </div>
+
     <%= render "common/footer" %>
 
   </body>

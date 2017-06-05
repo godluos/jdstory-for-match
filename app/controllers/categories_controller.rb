@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :admin_required
+  layout "admin"
 
   def index
     @categories = Category.all
@@ -29,7 +30,7 @@ class CategoriesController < ApplicationController
 
   def update
     @category = Category.find(params[:id])
-    r
+
     if @category.update(category_params)
       redirect_to categories_path
     else
