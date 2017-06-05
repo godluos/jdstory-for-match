@@ -41,5 +41,6 @@ Rails.application.routes.draw do
   end
 
   resources :cart_items
+
   root 'welcome#index'
 end

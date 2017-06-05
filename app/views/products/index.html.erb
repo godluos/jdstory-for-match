@@ -1,14 +1,29 @@
-<div class="row">
+<div class="container-fluid">
+  <div class="col-xs-5 col-md-2">
+    <div class="list-group">
+      <%= link_to("全部产品", products_path, class:"list-group-item active")%></h4>
+    <%= link_to("艺术版画", products_path(category:"艺术版画"), class:"list-group-item")%>
+    <%= link_to("工艺墙饰", products_path(category:"工艺墙饰"), class:"list-group-item")%>
+    <%= link_to("创意摆件", products_path(category:"创意摆件"), class:"list-group-item")%>
+  </div>
+</div>
+<div class="row col-xs-7 col-md-10">
   <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
-      <% end %>
-      <%= product.title %> ￥ <%= product.price %>
-    </div>
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <%= link_to product_path(product) do %>
+      <div>
+          <% if product.image.present? %>
+            <%= image_tag(product.image.thumb.url, class: "thumbnail shadow") %>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail shadow") %>
+          <% end %>
+          <h3><%= product.title %></h3>
+          <p>价格<%= product.price %></p>
+        </div>
+
+    <% end %>
+  </div>
+
   <% end %>
+</div>
 </div>

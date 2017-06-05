@@ -1,3 +1,18 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#show h2{
+  font-size: 2.4em;
+  letter-spacing: 0.2em;
+}
+
+#show p{
+  font-size: 1.2em;
+  letter-spacing: 0.136em;
+}
+
+.px10 {
+  padding-top: 1%;
+  padding-bottom: 2%;
+}
