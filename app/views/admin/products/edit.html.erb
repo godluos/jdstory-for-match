@@ -1,29 +1,33 @@
 <h2> Edit Product </h2>
 <%= simple_form_for [:admin, @product] do |f| %>
-<div class="group">
-  <%= f.input :title, label:"产品" %>
-</div>
-<div class="group">
-  <%= f.input :introduce, label:"简介" %>
-</div>
-<div class="group">
-  <%= f.input :price, label:"价格" %>
-</div>
-<div class="group">
-  <%= f.input :texture, label:"材质" %>
-</div>
-<div class="group">
-  <%= f.input :quantity, label:"库存" %>
-</div>
-<div class="group">
-  <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %>
-</div>
-<div class="group">
-  <%= f.input :image, label:"内容", as: :file %>
-</div>
-<div class="group">
-  <%= f.input :description, :as => :kindeditor,
+  <div class="group">
+    <%= f.input :title, label:"产品" %>
+  </div>
+  <div class="group">
+    <%= f.input :introduce, label:"简介" %>
+  </div>
+  <div class="group">
+    <%= f.input :price, label:"价格" %>
+  </div>
+  <div class="group">
+    <%= f.input :texture, label:"材质" %>
+  </div>
+  <div class="group">
+    <%= f.input :quantity, label:"库存" %>
+  </div>
+  <div class="group">
+    <%= f.select :category_id @categories %>
+  </div>
+  <% if @product.image.present? %>
+    <span>目前商品图</span> <br>
+    <%= image_tag(@product.image.thumb.url) %>
+  <% end %>
+  <div class="group">
+    <%= f.input :image, label:"内容", as: :file %>
+  </div>
+  <div class="group">
+    <%= f.input :description, :as => :kindeditor,
   :label => "详情", :input_html => { :width => 800, :height => 300 } %>
-</div>
-<%= f.submit "更新", data: { disable_with: "Submitting..." } %>
+  </div>
+  <%= f.submit "更新", data: { disable_with: "Submitting..." } %>
 <% end %>
