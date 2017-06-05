@@ -44,16 +44,10 @@
 }
 .bg-4 img {
     padding: 0;
-    border: none;
     border-radius: 0;
+    border: none;
     width: 90%;
 }
-.thumbnail p {
-    margin-top: 15px;
-    color: #555;
-}
-
-
 
 .head-title{
   padding-bottom: 5%;
@@ -66,19 +60,6 @@
   line-height:200%;
 }
 
-.toutu{
-  border: 3px solid transparent;
-  padding: 0;
-  transition: box-shadow 1s;
-}
-
-.toutu:hover {
-     box-shadow: 5px 0px 40px rgba(0,0,0, .6);
-}
-
-#3text{
-  margin-bottom: 50px;
-}
 
 
 .wasteland {

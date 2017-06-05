@@ -1591,9 +1591,6 @@ footer.bg-end{
 footer.bg-end p{font-size: 1.1em}
 
 // ------Body----------
-.thumbnail{
-  border: none;
-}
 
 #bg-0 {
   background-image: url('http://ongoo1pyy.bkt.clouddn.com/jd-store-bg-0-bc.png');
@@ -1603,6 +1600,25 @@ footer.bg-end p{font-size: 1.1em}
   background-color: #fff;
   padding-top: 10%;
   padding-bottom: 10%;
+}
+.shadow{
+  border: 3px solid transparent;
+  padding: 0;
+  transition: box-shadow 0.6s;
+  box-shadow: 5px 0px 40px rgba(0,0,0,.5);
+}
+
+.shadow:hover {
+     box-shadow: 5px 0px 40px rgba(129,199,211,1);
+}
+
+.thumbnail p {
+    margin-top: 15px;
+    color: #555;
+}
+
+.thumbnail{
+  border: none;
 }
 
 //---------common-------

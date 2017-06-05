@@ -68,13 +68,14 @@
     <div class="bg-4 row">
       <div id="3text" class="page-header col-md-12">
         <h2>精选好货，只给有品味的你</h2>
+        <br>
       </div>
       <div class="col-md-12 ">
         <% @products.each do |product| %>
           <div class="col-xs-6 col-md-3">
             <%= link_to product_path(product) do %>
               <% if product.image.present? %>
-                <%= image_tag(product.image.thumb.url, class: "thumbnail toutu") %>
+                <%= image_tag(product.image.thumb.url, class: "thumbnail shadow") %>
               <% else %>
                 <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
               <% end %>
