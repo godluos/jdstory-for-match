@@ -15,11 +15,12 @@
   <div class="group">
     <%= f.input :quantity, label:"库存" %>
   </div>
-  <div class="group">
+  <div class="group px10">
+    <strong>商品类别</strong><br>
     <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %>
   </div>
   <div class="group">
-    <%= f.input :image, label:"内容", as: :file %>
+    <%= f.input :image, label:"选择图片", as: :file %>
   </div>
   <div class="group">
     <%= f.input :description, :as => :kindeditor,
