@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @suggests = Product.all.random6
     @product = Product.find(params[:id])
   end
 

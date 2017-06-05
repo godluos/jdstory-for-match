@@ -66,9 +66,11 @@ ActiveRecord::Schema.define(version: 20170602174556) do
     t.datetime "updated_at",  null: false
     t.string   "image"
     t.string   "category_id"
-    t.integer  "cg_price"
     t.string   "cg_time"
     t.string   "artist"
+    t.integer  "cg_price"
+    t.string   "texture"
+    t.string   "introduce"
   end
 
   create_table "users", force: :cascade do |t|
