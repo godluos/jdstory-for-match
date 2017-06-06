@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user! , only: [:join, :quit]
+
   def index
     if params[:category].blank?
     @products = Product.all
@@ -12,6 +14,28 @@ class ProductsController < ApplicationController
     @suggests = Product.all.random6
     @product = Product.find(params[:id])
   end
+
+  def join
+    @product = Product.find(params[:id])
+    if !current_user.is_member_of?(@product)
+      current_user.join!(@product)
+      flash[:notice] = "加入本讨论版成功！"
+    else
+      flash[:warning] = "你已经是本讨论版成员了！"
+    end
+     redirect_to product_path(@product)
+   end
+
+   def quit
+     @product = Product.find(params[:id])
+     if current_user.is_member_of?(@product)
+       current_user.quit!(@product)
+       flash[:alert] = "已退出本讨论版！"
+     else
+       flash[:warning] = "你不是本讨论版成员，怎么退出 XD"
+     end
+     redirect_to product_path(@product)
+   end
 
   def add_to_cart
     @product = Product.find(params[:id])

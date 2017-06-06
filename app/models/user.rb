@@ -14,7 +14,14 @@ class User < ApplicationRecord
   end
 
   def is_member_of?(product)
-      participated_products.include?(product)
-    end
+    participated_products.include?(product)
+  end
 
+  def join!(product)
+    participated_products << product
+  end
+
+  def quit!(product)
+    participated_products.delete(product)
+  end
 end

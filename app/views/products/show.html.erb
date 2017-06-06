@@ -10,6 +10,17 @@
     <div class="text-center px10">
       <h2> <%= @product.title %> </h2>
     </div>
+    <span class="pull-right">
+  <% if current_user && current_user.is_member_of?(@product) %>
+    <label class="label label-success"> 已收藏 </label>
+    <%= link_to("取消收藏", quit_product_path(@product),
+    method: :post, class: "btn btn-default") %>
+  <% else %>
+    <label class="label label-warning"> 未收藏 </label>
+     <%= link_to("收藏", join_product_path(@product),
+    method: :post, class: "btn btn-default") %>
+  <% end %>
+</span>
     <div class="px10">
       <p><%= @product.introduce %></p>
     </div>
@@ -69,6 +80,7 @@
      <h3>Menu 1</h3>
      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
    </div>
+
  </div>
   </div>
 </div>
