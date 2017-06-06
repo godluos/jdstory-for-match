@@ -13,6 +13,7 @@ class ProductsController < ApplicationController
   def show
     @suggests = Product.all.random6
     @product = Product.find(params[:id])
+    @post = Post.new
   end
 
   def join
@@ -48,4 +49,9 @@ class ProductsController < ApplicationController
     redirect_to :back
   end
 
+  private
+
+  def post_params
+    params.require(:post).permit(:content)
+  end
 end
