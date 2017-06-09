@@ -1,0 +1,13 @@
+<div class="col-md-8 col-centered">
+  <h2> New Product </h2>
+  <%= simple_form_for [:account, @user] do |f| %>
+    <div class="group">
+      <%= f.input :username, label:"昵称" %>
+    </div>
+    <div class="group">
+      <%= f.input :tel, label:"联系电话" %>
+    </div>
+    
+    <%= f.submit "新建", data: { disable_with: "Submitting..." } %>
+  <% end %>
+</div>
