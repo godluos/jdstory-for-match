@@ -64,7 +64,7 @@
             <% else %>
               <a class="dropdown">
                 <a href="#" class="dropdown-toggle signin text-right"
-            data-toggle="dropdown">你好!, <%= current_user.email %>
+            data-toggle="dropdown">你好, <%= current_user.username %>
                   <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu text-right">
@@ -75,6 +75,9 @@
                   <% end %>
                   <li>
                     <%= link_to("个人订单列表", account_orders_path ) %>
+                  </li>
+                  <li>
+                    <%= link_to("个人列表", account_users_path ) %>
                   </li>
                   <li>
                     <%= link_to("My Groups", account_products_path) %>

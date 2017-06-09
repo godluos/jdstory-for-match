@@ -1,2 +1,0 @@
-module About::UsersHelper
-end
