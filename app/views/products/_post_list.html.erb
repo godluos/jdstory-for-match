@@ -1,0 +1,13 @@
+<tr>
+  <td>
+   <span>
+        <b><%= post.user.username %></b>&nbsp;说：
+   </span>
+   <span class="pull-right" ><%= post.created_at.to_s(:long) %></span>
+  </td>
+</tr>
+<tr>
+  <td>
+   <%= simple_format(post.content) %>
+  </td>
+</tr>

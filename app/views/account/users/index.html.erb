@@ -1,0 +1,33 @@
+<div id="user" class="col-md-8 col-centered">
+  <h2 class="text-center px10"> 个人资料 </h2>
+  <div class="px10">
+    <p><label>用户名：</label><%= @user.email %></p>
+  </div>
+  <div class="product-price px10">
+    <p><label>昵称：</label><%= @user.username %> </p>
+  </div>
+  <div class="px10">
+    <p><label>创建时间：</label><%= @user.created_at %></p>
+  </div>
+  <div class="px10">
+    <p><label>联系电话： </label><%= @user.tel %> </p>
+  </div>
+  <div class="px10">
+    <p><label>地址： </label><%= ChinaCity.get(@user.province) %><%= ChinaCity.get(@user.city) %>
+      <%= ChinaCity.get(@user.district) %><%= @user.address %>
+    </p>
+  </div>
+  <div class="px10">
+    <p><label>我的表单：</label><br>
+      <%= link_to("收藏列表", account_products_path ) %><br>
+      <%= link_to("评论列表", account_posts_path ) %><br>
+      <%= link_to("订单列表", account_orders_path ) %><br>
+    </p>
+  </div>
+  <div class="px10">
+    <%= link_to("修改个人资料", edit_account_user_path(@user), class:"btn btn-primary btn-md" ) %>
+    <%= link_to("返回首页", root_path, class:"btn btn-success btn-md"  ) %>
+    <%= link_to('登出',destroy_user_session_path, method: :delete,
+        class:"btn btn-danger btn-md") %>
+  </div>
+</div>

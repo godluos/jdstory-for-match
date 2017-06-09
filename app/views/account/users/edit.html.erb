@@ -1,0 +1,25 @@
+<div class="col-md-8 col-centered">
+  <h2> New Product </h2>
+  <%= simple_form_for [:account, @user] do |f| %>
+    <div class="group">
+      <%= f.input :username, label:"昵称" %>
+    </div>
+    <div class="group">
+      <%= f.input :tel, label:"联系电话" %>
+    </div>
+
+      <div class="city-group">
+        <label>地址：</label><br>
+        <%= f.select :province,  ChinaCity.list.unshift(["--省份--", 230000]), {},
+        class: "city-select "%>
+        <%= f.select :city,      ChinaCity.list(f.object.province).presence ||
+        [["--城市--", 230900]],    {}, class: "city-select " %>
+        <%= f.select :district,  ChinaCity.list(f.object.city).presence     ||
+        [["--地区--", 230903]],    {}, class: "city-select " %> <br>
+        街道：<%= f.input :address, label: false %>
+      </div>
+
+
+    <%= f.submit "新建", data: { disable_with: "Submitting..." } %>
+  <% end %>
+</div>

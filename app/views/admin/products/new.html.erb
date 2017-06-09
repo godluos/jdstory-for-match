@@ -1,24 +1,30 @@
 <h2> New Product </h2>
 <%= simple_form_for [:admin, @product] do |f| %>
   <div class="group">
-    <%= f.input :title %>
+    <%= f.input :title, label:"产品" %>
   </div>
   <div class="group">
-    <%= f.input :quantity %>
+    <%= f.input :introduce, label:"简介" %>
   </div>
   <div class="group">
-    <%= f.input :price %>
+    <%= f.input :price, label:"价格" %>
   </div>
   <div class="group">
+    <%= f.input :texture, label:"材质" %>
+  </div>
+  <div class="group">
+    <%= f.input :quantity, label:"库存" %>
+  </div>
+  <div class="group px10">
+    <strong>商品类别</strong><br>
     <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %>
   </div>
   <div class="group">
-    <%= f.input :image, as: :file %>
-
+    <%= f.input :image, label:"选择图片", as: :file %>
   </div>
   <div class="group">
     <%= f.input :description, :as => :kindeditor,
-    :label => "内容", :input_html => { :width => 800, :height => 300 } %>
+    :label => "详情", :input_html => { :width => 800, :height => 300 } %>
   </div>
-  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+  <%= f.submit "新建", data: { disable_with: "Submitting..." } %>
 <% end %>

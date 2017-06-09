@@ -17,12 +17,13 @@
           <li> <%= link_to("Products", admin_products_path) %> </li>
           <li> <%= link_to("Orders", admin_orders_path) %> </li>
           <li> <%= link_to("Categories", categories_path ) %> </li>
+          <li> <%= link_to("Posts", admin_posts_path ) %> </li>
         </ul>
       </div>
       <div class="col-md-10">
         <%= yield %>
       </div>
     </div>
-    <%= render "common/navbar" %>
+    <%= render "common/footer" %>
   </body>
 </html>

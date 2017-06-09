@@ -13,10 +13,10 @@
     <%= link_to product_path(product) do %>
       <div>
           <% if product.image.present? %>
-            <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+            <%= image_tag(product.image.thumb.url, class: "thumbnail shadow") %>
           <% else %>
-            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-          <% end %>      
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail shadow") %>
+          <% end %>
           <h3><%= product.title %></h3>
           <p>价格<%= product.price %></p>
         </div>
