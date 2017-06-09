@@ -46,6 +46,7 @@ gem 'rails_kindeditor'
 gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
 gem 'figaro'
+gem "intercom-rails"
 
 
 group :development, :test do
