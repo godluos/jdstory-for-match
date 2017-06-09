@@ -46,6 +46,7 @@ gem 'rails_kindeditor'
 gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
 gem 'figaro'
+gem 'china_city'
 
 
 group :development, :test do

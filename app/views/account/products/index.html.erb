@@ -1,0 +1,27 @@
+<div class="col-md-12">
+
+  <h2 class="text-center"> 我收藏的产品 </h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th> # </th>
+        <th> Title </th>
+      
+        <th> Last Update </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td> # </td>
+          <td> <%= link_to(product.title, product_path(product)) %> </td>
+
+
+          <td> <%= product.updated_at %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

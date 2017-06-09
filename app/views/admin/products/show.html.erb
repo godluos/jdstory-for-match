@@ -1,0 +1,40 @@
+<div class="rowss">
+  <div class="col-xs-10 col-sm-5 col-md-5">
+    <% if @product.image.present? %>
+      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+  </div>
+  <div id="show" class="col-xs-10 col-sm-5 col-md-5">
+    <div class="text-center px10">
+      <h2> <%= @product.title %> </h2>
+    </div>
+    <div class="px10">
+      <p><%= @product.introduce %></p>
+    </div>
+    <div class="product-price px10">
+      <p>价格： ￥ <%= @product.price %> </p>
+    </div>
+    <div class="px10">
+      <p>类别： <%= @product.category.name %></p>
+    </div>
+    <div class="px10">
+      <p>材质： <%= @product.texture %> </p>
+    </div>
+    <div class="px10">
+      <p>库存： <%= @product.quantity %> </p>
+    </div>
+    <div class="pull-left">
+      <% if @product.quantity.present? && @product.quantity > 0 %>
+        <%= link_to("加入购物车", add_to_cart_product_path(@product),
+            method: :post, class:"btn btn-danger btn-lg") %>
+      <% else %>
+        已销售一空，无法购买
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="row col-md-10">
+    <p><%= raw @product.description %></p>
+  </div>

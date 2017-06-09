@@ -1,50 +1,3 @@
-<!-- <nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">JDStore </a>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active">
-          <%= link_to("Products", products_path) %>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <%= link_to carts_path do  %>
-            购物车 <i class="fa fa-shopping-cart"> </i>
-            ( <%= current_cart.products.count %> )
-          <% end %>
-        </li>
-        <% if !current_user %>
-          <li><%= link_to("注册", new_user_registration_path) %> </li>
-          <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'),
-          new_user_session_path) %></li>
-        <% else %>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Hi!, <%= current_user.email %>
-              <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <% if current_user.admin? %>
-                <li>
-                  <%= link_to("Admin 选单", admin_products_path ) %>
-                </li>
-                <li>
-                  <%= link_to("个人订单列表", account_orders_path ) %>
-                </li>
-              <% end %>
-              <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'),
-              destroy_user_session_path, method: :delete) %> </li>
-            </ul>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-</nav> -->
-
 <nav class="navbar navbar-default navbar-fixed white no-background bootsnav navbar-mobile">
   <div class="call-us-area bg-info text-white">
     <div class="container">
@@ -56,37 +9,21 @@
             </ul>
           </div>
         </div>
-
         <div class="col-sm-6 col-xs-6">
           <div class="call-us-text text-right">
-        <% if !current_user %>
-        <a><%= link_to("注册", new_user_registration_path, class: 'signin') %> </a>
-        <a><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'),
-        new_user_session_path, class: 'signin') %></a>
-        <% else %>
-          <a class="dropdown">
-            <a href="#" class="dropdown-toggle signin text-right"
-            data-toggle="dropdown">你好!, <%= current_user.email %>
-              <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu text-right">
+            <% if !current_user %>
+              <a><%= link_to("注册", new_user_registration_path, class: 'hello') %> </a>
+              <a><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'),
+                 new_user_session_path, class: 'hello') %></a>
+            <% else %>
+              <%= link_to("个人列表", account_users_path, class:"hello" ) %>
+              <a class="hello">欢迎，<%= current_user.username %></a>
               <% if current_user.admin? %>
-                <li>
-                  <%= link_to("Admin 选单", admin_products_path ) %>
-                </li>
-              
-                <li>
-                  <%= link_to("个人订单列表", account_orders_path ) %>
-                </li>
+                  <%= link_to("Admin 选单", admin_products_path,class:"hello text-right" ) %>
               <% end %>
-              <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'),
-              destroy_user_session_path, method: :delete) %> </li>
-            </ul>
-          </a>
-          <% end%>
+            <% end%>
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -114,7 +51,6 @@
                 </li>
                 <li>
                   <%= link_to("艺术版画",products_path(category:"艺术版画"))%>
-
                 </li>
                 <li>
                   <%= link_to("工艺墙饰",products_path(category:"工艺墙饰"))%>
@@ -122,7 +58,6 @@
                 <li>
                   <%= link_to("创意摆件",products_path(category:"创意摆件"))%>
                 </li>
-
                 <li>
                   <%= link_to carts_path do  %>
                     购物车 <i class="fa fa-shopping-cart"> </i>
